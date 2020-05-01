@@ -1,0 +1,72 @@
+<CalcInput>:
+    font_size: 16
+
+<CalcWindow>:
+    orientation: 'vertical'
+    padding: 10,0
+    spacing: 3
+    canvas.before:
+        Color:
+            rgba: (0.004, 0.055, 0.102, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        id: display
+        size_hint_y: 0.2
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                id: hist
+    CalcInput:
+        id: query
+        multiline: False
+        font_size: 32
+        size_hint_y: 0.1
+        foreground_color: (0.004, 0.055, 0.102, 1)
+        background_color: (1,1,1,1)
+        background_normal: ''
+    BoxLayout:
+        id: main_btns
+        size_hint_y: 0.6
+        spacing: 10
+        GridLayout:
+            id: numbers
+            cols:3
+            spacing: 5
+        BoxLayout:
+            id: symbols_cont
+            orientation: 'vertical'
+            GridLayout:
+                id: symbols
+                cols: 3
+                spacing: 5
+        GridLayout:
+            id: right_symbols
+            cols: 1
+            spacing: 5
+            size_hint_x: 0.35
+    BoxLayout:
+        id: state_button
+        size_hint_y: 0.1
+        spacing: 5
+        Label:
+            text: ''
+
+
+<Historico>
+    size_hint_y: None
+    height: 30
+    Label:
+        id: expressao
+        text: ''
+        font_size: 26
+    Label:
+        text: '='
+        font_size: 26
+    Label:
+        id: resultado 
+        text: ''
+        font_size: 26
